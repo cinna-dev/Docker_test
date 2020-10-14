@@ -1,8 +1,8 @@
 # Docker
 
-===============
+===
 
-## Activate Virtualization on Windown 10 _Home_
+## Activate Virtualization on Windown 10 *Home*
 
 ---
 
@@ -10,9 +10,9 @@
 >
 > 1. ### With Home you need to make sure virtualization is active in BIOS
 >
-> > In my case it is intel virtualization
+> > In my case it's intel virtualization
 >
-> 2. ### download the [Docker fDesktop for Windows with using the WSL 2 backend for Wondows Home](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
+> 2. ### download the [Docker Desktop for Windows with using the WSL 2 backend for Wondows Home](https://hub.docker.com/editions/community/docker-ce-desktop-windows/)
 >
 > > [You can find more information here](https://docs.docker.com/docker-for-windows/install-windows-home/)
 >
