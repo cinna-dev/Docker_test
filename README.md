@@ -1,6 +1,6 @@
 # Docker
 
-===
+<https://hub.docker.com/>
 
 ## Activate Virtualization on Windown 10 *Home*
 
@@ -129,7 +129,7 @@
 
 use `winpty` infront
 
-run the nginx engine on port 80
+run the nginx web server on port 80
 
 ```PowerShell
 docker container run -it -p 80:80 nginx
