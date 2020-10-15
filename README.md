@@ -121,3 +121,16 @@
 > This will set the version of any new distribution installed to WSL 2.
 >
 > ### [Troubleshooting installation](https://docs.microsoft.com/en-us/windows/wsl/install-win10#troubleshooting-installation)
+
+
+## Commands
+
+------------
+
+use `winpty` infront
+
+run the nginx engine on port 80
+
+```PowerShell
+docker container run -it -p 80:80 nginx
+```
