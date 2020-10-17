@@ -2,15 +2,16 @@
 
 <https://hub.docker.com/>
 
+works via *Linux Namespaces*
+therefore docker needs some form of Linux to run
+
 ## VSCode Docker Extension
-
-
-
-## Activate Virtualization on Windown 10 *Home*
 
 ms-azuretools.vscode-docker
 
 ---
+
+## Activate Virtualization on Windown 10 *Home*
 
 > When using PRO und up Edition just use Hyper-V.
 >
@@ -156,7 +157,7 @@ or
 docker ps 
 ```
 
-show all conatainer (even not running ones)
+show all container (even not running ones)
 
 ```PowerShell
 docker container ls -a
@@ -169,6 +170,8 @@ docker images
 ```
 
 `docker container run -detach -port <localmachine-port:container-port> --name <name> <image>`
+
+`-d` option indicates that we want to run the containers in the background and get our terminal back.
 
 ```PowerShell
 docker container run -d -p 80:80 --name mynginx nginx
@@ -229,7 +232,10 @@ docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-
 
 > ## Dockerfile
 >
-> Dcokerfile reference: <https://docs.docker.com/engine/reference/builder/>
+> Dockerfile reference: <https://docs.docker.com/engine/reference/builder/>
+>
+> <https://docs.docker.com/develop/develop-images/dockerfile_best-practices/>
+>
 >
 > create a `Dockerfile` inside your workspace
 >
@@ -248,6 +254,35 @@ docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-
 > COPY . .
 > ```
 
+### docker image build
+
+build image and push to docker account
+
+`docker image build -t <Accountname>/<Imagename> .`
+
+`.` referse to the folder we are in
+
+```PowerShell
+docker image build -t cinnadev/nginx-website .
+```
+
+### build an local image from the repo
+
+```PowerShell
+docker container run -d -p 8082:80 cinnadev/nginx-website 
+```
+
+### Docker Login
+
+```PowerShell
+docker login
+```
+
+### push Image to Docker Repository
+
+```PowerShell
+docker push cinnadev/nginx-website
+```
 
 
 ## Terminology
@@ -267,6 +302,7 @@ A Docker container consists of
 >    - A standard set of instructions
 >
 > The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
+>`To help you grasp the nuance, think of an image as a class, and of a container as an instance of that class.`
 
 - Dockerfile:
 
