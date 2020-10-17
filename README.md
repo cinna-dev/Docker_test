@@ -232,9 +232,9 @@ docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-
 - container
 > A container is a runtime instance of a docker image.
 A Docker container consists of
-
+>
 >    - A Docker image
 >    - An execution environment
 >    - A standard set of instructions
-
+>
 > The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
