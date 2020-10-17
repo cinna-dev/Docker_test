@@ -227,20 +227,20 @@ shortcut for current directory:
 docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx 
 ```
 
-    ## Dockerfile
-
-    Dcokerfile reference: <https://docs.docker.com/engine/reference/builder/>
-
-    create a `Dockerfile` inside your workspace
-
-    We get everthing that comes from the latest version of enginx
-    `FROM nginx:latest`
-
-    define workdirectory in the container
-    `WORKDIR /usr/share/nginx/html`
-
-    copy all to all (all the filex from our local dir to the workdir)
-    `COPY . .`
+> ## Dockerfile
+>
+> Dcokerfile reference: <https://docs.docker.com/engine/reference/builder/>
+>
+> create a `Dockerfile` inside your workspace
+>
+> We get everthing that comes from the latest version of enginx
+> `FROM nginx:latest`
+>
+>define workdirectory in the container
+> `WORKDIR /usr/share/nginx/html`
+>
+> copy all to all (all the filex from our local dir to the workdir)
+> `COPY . .`
 
 
 
