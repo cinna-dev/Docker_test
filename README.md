@@ -220,16 +220,39 @@ adding a new container with a **BindMount**
 shortcut for current directory:
 
 - bash: `$(pwd)`
-- cmd: `%cd$`
+- cmd: `%cd%`
 - PowerShell: `${PWD}`
 
 ```PowerShell
 docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx 
 ```
 
+    ## Dockerfile
+
+    Dcokerfile reference: <https://docs.docker.com/engine/reference/builder/>
+
+    create a `Dockerfile` inside your workspace
+
+    We get everthing that comes from the latest version of enginx
+    `FROM nginx:latest`
+
+    define workdirectory in the container
+    `WORKDIR /usr/share/nginx/html`
+
+    copy all to all (all the filex from our local dir to the workdir)
+    `COPY . .`
+
+
+
 ## Terminology
 
-- container
+---------------
+
+<https://docs.docker.com/glossary/>
+
+
+- container:
+
 > A container is a runtime instance of a docker image.
 A Docker container consists of
 >
@@ -238,3 +261,33 @@ A Docker container consists of
 >    - A standard set of instructions
 >
 > The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
+
+- Dockerfile:
+
+> A Dockerfile is a text document that contains all the commands you would normally execute manually in order to build a Docker image. Docker can build images automatically by reading the instructions from a Dockerfile.
+
+- image:
+
+> In an image, a layer is modification to the image, represented by an instruction in the Dockerfile. Layers are applied in sequence to the base image to create the final image. When an image is updated or rebuilt, only layers that change need to be updated, and unchanged layers are cached locally. This is part of why Docker images are so fast and lightweight. The sizes of each layer add up to equal the size of the final image.
+
+- namespace:
+
+> A Linux namespace is a Linux kernel feature that isolates and virtualizes system resources. Processes which are restricted to a namespace can only interact with resources or processes that are part of the same namespace. Namespaces are an important part of Docker’s isolation model. Namespaces exist for each type of resource, including net (networking), mnt (storage), pid (processes), uts (hostname control), and user (UID mapping). For more information about namespaces, see Docker run reference and Isolate containers with a user namespace.
+
+- repository:
+
+> A repository is a set of Docker images. A repository can be shared by pushing it to a registry server. The different images in the repository can be labeled using tags.
+
+Here is an example of the shared nginx repository and its tags.
+
+- volume:
+
+> A volume is a specially-designated directory within one or more containers that bypasses the Union File System. Volumes are designed to persist data, independent of the container’s life cycle. Docker therefore never automatically deletes volumes when you remove a container, nor will it “garbage collect” volumes that are no longer referenced by a container. Also known as: data volume
+>
+> There are three types of volumes: host, anonymous, and named:
+>
+> - A host volume lives on the Docker host’s filesystem and can be accessed from within the container.
+>
+> - A named volume is a volume which Docker manages where on disk the volume is created, but it is given a name.
+>
+> - An anonymous volume is similar to a named volume, however, it can be difficult, to refer to the same volume over time when it is an anonymous volumes. Docker handle where the files are stored.
