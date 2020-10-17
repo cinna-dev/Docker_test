@@ -2,7 +2,13 @@
 
 <https://hub.docker.com/>
 
+## VSCode Docker Extension
+
+
+
 ## Activate Virtualization on Windown 10 *Home*
+
+ms-azuretools.vscode-docker
 
 ---
 
@@ -127,10 +133,108 @@
 
 ------------
 
-use `winpty` infront
+<https://gist.github.com/bradtraversy/89fad226dc058a41b596d586022a9bd3
+
+
+When useing bash use `winpty` infront of each command
 
 run the nginx web server on port 80
 
 ```PowerShell
 docker container run -it -p 80:80 nginx
 ```
+
+show all running containers
+
+```PowerShell
+docker container ls 
+```
+
+or
+
+```PowerShell
+docker ps 
+```
+
+show all conatainer (even not running ones)
+
+```PowerShell
+docker container ls -a
+```
+
+show all images
+
+```PowerShell
+docker images  
+```
+
+`docker container run -detach -port <localmachine-port:container-port> --name <name> <image>`
+
+```PowerShell
+docker container run -d -p 80:80 --name mynginx nginx
+```
+
+force remove a running Container
+
+`docker container rm <name> -force`
+
+```PowerShell
+docker container rm mynginx -f
+```
+
+
+enter Container
+
+```PowerShell
+docker container exec -it mynginx bash
+```
+
+will return the root@. Enter `ls` to show content.
+
+webroot in debian (nginx enviroment) is under `usr/share/nginx/html`
+
+```PowerShell
+cd usr/share/nginx/html
+```
+
+`ls` to show content.
+
+exit container
+
+```PowerShell
+exit
+```
+
+remove all Containers
+
+
+```PowerShell
+docker rm $(docker ps -ap) -f
+```
+
+map areas of the container to you local file system via a "Volume/BindMount"
+
+adding a new container with a **BindMount** 
+`-v <URL of local machine>:<URL of container>` 
+
+shortcut for current directory:
+
+- bash: `$(pwd)`
+- cmd: `%cd$`
+- PowerShell: `${PWD}`
+
+```PowerShell
+docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx 
+```
+
+## Terminology
+
+- container
+> A container is a runtime instance of a docker image.
+A Docker container consists of
+
+    A Docker image
+    An execution environment
+    A standard set of instructions
+
+The concept is borrowed from Shipping Containers, which define a standard to ship goods globally. Docker defines a standard to ship software.
