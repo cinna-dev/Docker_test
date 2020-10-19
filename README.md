@@ -285,13 +285,91 @@ docker login
 ```PowerShell
 docker push cinnadev/nginx-website
 ```
+
 ## **Node Mongo Project**
+
+### create the Dockerfile
 
 asterix will include both package files . package.json and package-lock.json
 `*` = wildcard
 
 ```Dockerfile
 COPY package*.json
+```
+
+`RUN` commands aftge copy the package.json to install npm packages
+
+```Dockerfile
+RUN npm install
+```
+
+next copy everything else over
+
+```Dockerfile
+COPY . .
+```
+
+expose the port we will run on
+
+```Dockerfile
+EXPOSE 3000
+```
+
+execute cmd command to start the node server
+
+```Dockerfile
+CMD ["npm", "start"]
+```
+
+### create the docker-compose.yml
+
+version of docker compose
+
+```yaml
+version: '3'
+```
+
+#### define 2 Services 
+
+    app 
+    mongo
+
+```yaml
+services: 
+    app:
+        container_name: docker-node-mongo
+        restart: always
+        build: .
+        ports:
+            - '80:3000'
+    mongo:
+        container_name: mongo
+        image: mongo
+        posts:
+            - '27017:27017':
+```
+
+- app is builded from the current dir `bulid: .` and will run on port 80 local 3000 in conatainer 
+
+- mongo is an mongo image and runs on port 27017 local as well as in the container
+
+#### link mongo container to the app
+
+```yaml
+services: 
+    app:
+        container_name: docker-node-mongo
+        restart: always
+        build: .
+        ports:
+            - '80:3000'
+        links:
+            - mongo
+    mongo:
+        container_name: mongo
+        image: mongo
+        posts:
+            - '27017:27017'
 ```
 
 ## Terminology
