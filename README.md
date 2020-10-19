@@ -240,12 +240,14 @@ docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-
 > create a `Dockerfile` inside your workspace
 >
 > We get everthing that comes from the latest version of enginx
-> ```
+>
+> ```Dockerfile
 > FROM nginx:latest
 > ```
 >
 >define workdirectory in the container
-> ```
+>
+> ```Dockerfile
 > WORKDIR /usr/share/nginx/html
 > ```
 >
@@ -283,7 +285,14 @@ docker login
 ```PowerShell
 docker push cinnadev/nginx-website
 ```
+## **Node Mongo Project**
 
+asterix will include both package files . package.json and package-lock.json
+`*` = wildcard
+
+```Dockerfile
+COPY package*.json
+```
 
 ## Terminology
 
