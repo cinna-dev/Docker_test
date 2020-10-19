@@ -286,6 +286,8 @@ docker login
 docker push cinnadev/nginx-website
 ```
 
+---
+
 ## **Node Mongo Project**
 
 ### create the Dockerfile
@@ -347,7 +349,7 @@ services:
     mongo:
         container_name: mongo
         image: mongo
-        posts:
+        ports:
             - '27017:27017':
 ```
 
@@ -370,9 +372,61 @@ services:
     mongo:
         container_name: mongo
         image: mongo
-        posts:
+        ports:
             - '27017:27017'
 ```
+
+### create a .dockerignore 
+
+ignore node_modules and in case there are any npm-debug.log's
+
+```
+node_modules
+npm-debug.log
+```
+
+### run compose 
+
+run 
+
+```PowerShell
+docker-compose up
+```
+
+alternatively: if you want it to run in the background use
+
+```PowerShell
+docker-compose up -d
+```
+
+from the root dir.
+
+- It fill pull the mongo image and the node10 image
+
+- after that it will set the working dir
+
+- copy the package*.json
+
+- successfully build
+
+- creating mongo container
+
+- creating docker-node-mongo container
+
+- MongoDB connected
+
+
+### remove Container
+
+`ctrl+c` in the Terminal to exit the server
+
+and remove the 2 containers and `network` with:
+
+```PowerShell
+docker-compose down
+```
+
+> you can also create your own network of containers and if you use `docker-compose` it will put the containers on their own network.
 
 ## Terminology
 

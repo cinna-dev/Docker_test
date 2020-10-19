@@ -9,12 +9,13 @@ app.use(express.urlencoded({ extended: false }));
 
 // Connect to MongoDB
 // connect to mongo container // mongo:27017
+// see the docker-compose file
 mongoose
   .connect(
     'mongodb://mongo:27017/docker-node-mongo',
     { useNewUrlParser: true }
   )
-  .then(() => console.log('MongoDB Connected'))
+  .then(() => console.log('MongoDB Connected'))// console log in terminal after building the container and successfully connect to the mongo container
   .catch(err => console.log(err));
 
 const Item = require('./models/Item');
