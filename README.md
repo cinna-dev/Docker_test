@@ -290,7 +290,7 @@ docker push cinnadev/nginx-website
 
 ### create the Dockerfile
 
-create a new file and name i `Dockerfile`
+create a new file and name it `Dockerfile`
 
 asterix will include both package files . package.json and package-lock.json
 `*` = wildcard
