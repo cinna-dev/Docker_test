@@ -290,6 +290,8 @@ docker push cinnadev/nginx-website
 
 ### create the Dockerfile
 
+create a new file and name i `Dockerfile`
+
 asterix will include both package files . package.json and package-lock.json
 `*` = wildcard
 
@@ -297,7 +299,7 @@ asterix will include both package files . package.json and package-lock.json
 COPY package*.json
 ```
 
-`RUN` commands aftge copy the package.json to install npm packages
+`RUN` commands after we copied the package.json to install npm packages
 
 ```Dockerfile
 RUN npm install
