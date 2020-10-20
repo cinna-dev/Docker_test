@@ -186,7 +186,7 @@ docker container rm mynginx -f
 ```
 
 
-enter Container
+enter the Container bash terminal 
 
 ```PowerShell
 docker container exec -it mynginx bash
@@ -427,6 +427,15 @@ docker-compose down
 ```
 
 > you can also create your own network of containers and if you use `docker-compose` it will put the containers on their own network.
+
+## **Command Glossary**
+
+### Options
+
+| Name, shorthand         | Default    | Descritpion                                                  |
+|:------------------------|:----------:|:-------------------------------------------------------------|
+| --file , -f             |            |Name of the Dockerfile (Default is ‘PATH/Dockerfile’)         |
+| --tag , -t              |            |Name and optionally a tag in the ‘name:tag’ format            |
 
 ## Terminology
 
