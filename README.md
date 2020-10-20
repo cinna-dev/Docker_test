@@ -436,6 +436,7 @@ docker-compose down
 |:------------------------|:----------:|:-------------------------------------------------------------|
 | --file , -f             |            |Name of the Dockerfile (Default is ‘PATH/Dockerfile’)         |
 | --tag , -t              |            |Name and optionally a tag in the ‘name:tag’ format            |
+| --detach , -d           |            |Run container in background and print container ID            |
 
 ## Terminology
 
