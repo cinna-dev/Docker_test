@@ -230,8 +230,8 @@ shortcut for current directory:
 docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx 
 ```
 
-> ## Dockerfile
->
+## Dockerfile
+
 > Dockerfile reference: <https://docs.docker.com/engine/reference/builder/>
 >
 > <https://docs.docker.com/develop/develop-images/dockerfile_best-practices/>
