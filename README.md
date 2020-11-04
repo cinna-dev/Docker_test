@@ -264,13 +264,13 @@ build image and push to docker account
 
 `.` referse to the folder we are in
 
-```shell
+```bash
 docker image build -t cinnadev/nginx-website .
 ```
 
 ### build an local image from the repo
 
-```shell
+```bash
 docker container run -d -p 8082:80 cinnadev/nginx-website 
 ```
 
