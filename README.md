@@ -2,7 +2,7 @@
 
 ## Directory
 
-- [VSCode Docker Extansion](#vscode-docker-extansion)
+- [VSCode Docker Extension](#vscode-docker-extansion)
 
 - [Activat Virtualization on Windos 10 *Home*](#activate-virtualization-on-windows-10-home)
 
