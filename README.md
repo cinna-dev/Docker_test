@@ -226,7 +226,7 @@ shortcut for current directory:
 - cmd: `%cd%`
 - PowerShell: `${PWD}`
 
-```PowerShell
+```shell
 docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-website nginx 
 ```
 
@@ -241,13 +241,13 @@ docker container run -d -p 8080:80 -v $(pwd):/usr/share/nginx/html --name nginx-
 >
 > We get everthing that comes from the latest version of enginx
 >
-> ```Dockerfile
+> ```dockerfile
 > FROM nginx:latest
 > ```
 >
 >define workdirectory in the container
 >
-> ```Dockerfile
+> ```dockerfile
 > WORKDIR /usr/share/nginx/html
 > ```
 >
@@ -264,13 +264,13 @@ build image and push to docker account
 
 `.` referse to the folder we are in
 
-```PowerShell
+```shell
 docker image build -t cinnadev/nginx-website .
 ```
 
 ### build an local image from the repo
 
-```PowerShell
+```shell
 docker container run -d -p 8082:80 cinnadev/nginx-website 
 ```
 
