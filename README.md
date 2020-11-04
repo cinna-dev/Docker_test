@@ -1,8 +1,26 @@
 # Docker
 
+## Directory
+
+- [VSCode Docker Extansion](#vscode-docker-extansion)
+
+- [Activat Virtualization on Windos 10 *Home*](#activate-virtualization-on-windows-10-home)
+
+- [Commands](#commands)
+
+- [Commands](#commands)
+
+- [Dockerfile](#commands)
+
+- [Node Mongo Project](#node-mongo-project)
+
+- [Command Glossary](#command-glossary)
+
+- [Terminology](#terminology)
+
 <https://hub.docker.com/>
 
-works via *Linux Namespaces*
+works via _Linux Namespaces_
 therefore docker needs some form of Linux to run
 
 ## VSCode Docker Extension
@@ -11,7 +29,7 @@ ms-azuretools.vscode-docker
 
 ---
 
-## Activate Virtualization on Windown 10 *Home*
+## Activate Virtualization on Windows 10 *Home*
 
 > When using PRO und up Edition just use Hyper-V.
 >
@@ -35,10 +53,10 @@ ms-azuretools.vscode-docker
 >
 > #### Requirements
 >
-> > - For x64 systems: Version 1903 or higher, with Build 18362 or higher.
-> > - For ARM64 systems: Version 2004 or higher, with Build 19041 or higher.
-> > - Builds lower than 18362 do not support WSL 2. Use the [Windows Update Assistant ](https://www.microsoft.com/software-download/windows10) to update your version of Windows
-> >   To check your version and build number, select Windows logo key + R, type winver, select OK. (Or enter the ver command in Windows Command Prompt). Update to the latest Windows version in the Settings menu.
+> > -   For x64 systems: Version 1903 or higher, with Build 18362 or higher.
+> > -   For ARM64 systems: Version 2004 or higher, with Build 19041 or higher.
+> > -   Builds lower than 18362 do not support WSL 2. Use the [Windows Update Assistant ](https://www.microsoft.com/software-download/windows10) to update your version of Windows
+> >     To check your version and build number, select Windows logo key + R, type winver, select OK. (Or enter the ver command in Windows Command Prompt). Update to the latest Windows version in the Settings menu.
 >
 > 5. ### Enable Virtual Machine feature
 >
@@ -53,16 +71,16 @@ ms-azuretools.vscode-docker
 >
 > 6. ### Download the Linux kernel update package
 >
-> - Download the latest package:
+> -   Download the latest package:
 >
 > > [WSL2 Linux kernel update package for x64 machines](https://wslstorestorage.blob.core.windows.net/wslblob/wsl_update_x64.msi)
 >
-> - Run the update package downloaded in the previous step. (Double-click to run - you will be prompted for elevated permissions, select ‘yes’ to approve this installation.)
+> -   Run the update package downloaded in the previous step. (Double-click to run - you will be prompted for elevated permissions, select ‘yes’ to approve this installation.)
 >
 > Once the installation is complete, move on to the next step - setting WSL 2 as your default version when installing new Linux distributions. (Skip this step if you want your new Linux installs to be set to WSL 1).
 >
 > 7. ### Set WSL 2 as your default version
->    Open PowerShell as Administrator and run this command to set WSL 2 as the default version when installing a new Linux distribution:
+>     Open PowerShell as Administrator and run this command to set WSL 2 as the default version when installing a new Linux distribution:
 >
 > > ```PowerShell
 > > wsl --set-default-version 2
@@ -70,12 +88,12 @@ ms-azuretools.vscode-docker
 >
 > 8. ### Install your Linux distribution of choice
 >
-> - Open the [Microsoft Store](https://aka.ms/wslstore) and select your favorite Linux distribution.
+> -   Open the [Microsoft Store](https://aka.ms/wslstore) and select your favorite Linux distribution.
 >
 > The following links will open the Microsoft store page for each distribution:
 >
-> > - [Ubuntu 16.04 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9)
-> > - [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
+> > -   [Ubuntu 16.04 LTS](https://www.microsoft.com/store/apps/9pjn388hp8c9)
+> > -   [Ubuntu 18.04 LTS](https://www.microsoft.com/store/apps/9N9TNGVNDL3Q)
 > > - [Ubuntu 20.04 LTS ](https://www.microsoft.com/store/apps/9n6svws3rx71)
 > > - [openSUSE Leap 15.1 ](https://www.microsoft.com/store/apps/9NJFZK00FGKV)
 > > - [SUSE Linux Enterprise Server 12 SP5](https://www.microsoft.com/store/apps/9MZ3D1TRP8T1)
